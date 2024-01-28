@@ -1,0 +1,83 @@
+
+  figure {
+    width: 100%;
+    aspect-ratio: 1;
+    margin: 400px auto;
+    padding: 5px 20px 0;
+    box-sizing: border-box;
+    display: grid;
+    grid-template-rows: 100%;
+    cursor: pointer;
+    position: relative;
+    filter: drop-shadow(0 0 20px rgb(0 0 0/50%));
+  }
+  figure:before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    inset: 0;
+    background: top/cover;
+    /* transform-origin: bottom; */
+    filter: brightness(.8);
+    transition: .5s;
+  }
+  figure:before {
+    background-image: url(https://w0.peakpx.com/wallpaper/883/404/HD-wallpaper-abandoned-city-town-darkness-birds-scary-fantasy.jpg)
+  }
+  figure + figure:before {
+    background-image: url(https://storage.kun.uz/source/8/ZLxPnf1w4fCu-_MVqRwskLIWZWzioHfo.jpg)
+  }
+  figure +figure + figure:before {
+    background-image: url(https://medisf.traasgpu.com/ifis/08da28272af73a15.jpg)
+  }
+  figure + figure + figure + figure:before {
+    background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-t4zW6ut_2WBPgWGaswD6pI7TSpFEKwpWKQ&usqp=CAU)
+  }
+  img {
+    grid-area: 1/1;
+    width: 100%;
+    height: 70%;
+    object-fit: cover;
+    object-position: top;
+    filter: contrast(.8) brightness(.7);
+    place-self: end center;
+    transition: .5s;
+  }
+  figcaption {
+    grid-area: 1/1;
+    width: calc(90% + 50px);
+    font-family: Exoct;
+    color: #fff;
+    font-size: min(32px,5vmin);
+    text-align: center;
+    place-self: end center;
+    transform: perspective(500px) translateY(100%) rotateX(-90deg);
+    backface-visibility: hidden;
+    transform-origin: top;
+    background: #000;
+    transition: .5s;
+  }
+  figure:hover img {
+    width: 130%;
+    height: 255%;
+    filter: contrast(1);
+  }
+  figure:hover::before {
+    filter: brightness(.3);
+    transform: perspective(500px) rotateX(85deg);
+  }
+  figure:hover figcaption{
+    transform: perspective(500px)translateY(100%) rotateX(-5deg);
+  }
+  
+  body {
+    margin: 0;
+    min-height: 100vh;
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: min(230px,35vmin);
+    place-content: end center;
+    gap: 50px;
+    background-color: black;
+  }
+  
